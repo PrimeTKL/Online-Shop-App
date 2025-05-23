@@ -2,9 +2,6 @@ package com.example.online_shop.activity
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.example.online_shop.MainActivity
-import com.example.online_shop.R
 import com.example.online_shop.databinding.ActivityIntroBinding
 
 class IntroActivity : BaseActivity() {
@@ -15,7 +12,7 @@ class IntroActivity : BaseActivity() {
         setContentView(binding.root)
 
         binding.startBtn.setOnClickListener{
-            startActivity(Intent(this@IntroActivity,MainActivity::class.java))
+            startActivity(Intent(this@IntroActivity, MainActivity::class.java))
 
         }
 
