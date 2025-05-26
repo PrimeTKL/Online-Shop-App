@@ -82,9 +82,9 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewpageSlider"
+                    android:id="@+id/viewpagerSlider"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="160dp"
                     android:paddingStart="24dp"
                     android:paddingEnd="24dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -106,7 +106,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/viewpageSlider"
+                    app:layout_constraintTop_toBottomOf="@id/viewpagerSlider"
                     app:selectedDotColor="@color/purple"
                     tools:visibility="visible" />
 
