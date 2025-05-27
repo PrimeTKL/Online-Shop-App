@@ -1,6 +1,7 @@
 package com.example.online_shop.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
 import com.example.online_shop.Model.ItemModel
+import com.example.online_shop.activity.DetailActivity
 import com.example.online_shop.databinding.ViewholderBrandBinding
 import com.example.online_shop.databinding.ViewholderRecommendedBinding
 
@@ -33,9 +35,11 @@ class PopularAdapter(val items:MutableList<ItemModel>):
             .apply(requestOptions)
             .into(holder.binding.pic)
 
-//        holder.itemView.setOnClickListener{
-//            val intent = Intent(holder.itemView.context)
-//        }
+        holder.itemView.setOnClickListener{
+            val intent = Intent(holder.itemView.context,DetailActivity::class.java)
+            intent.putExtra("object",items[position])
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = items.size

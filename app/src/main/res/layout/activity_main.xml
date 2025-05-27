@@ -58,7 +58,7 @@
                     app:srcCompat="@drawable/bell_icon" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/backBtn"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     app:srcCompat="@drawable/search_icon" />
