@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.example.online_shop.Adapter.BrandAdapter
+import com.example.online_shop.Adapter.PopularAdapter
 import com.example.online_shop.Model.SliderModel
 import com.example.online_shop.Adapter.SliderAdapter
 import com.example.online_shop.ViewModel.MainViewModel
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         initBanner()
         initBrand()
+        initPopular()
     }
 
     private fun initBanner() {
@@ -54,14 +57,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initBrand(){
-        binding.progressBarPopular.visibility=View.VISIBLE
-        viewModel.brands.observe(this,Observer{
-            binding.viewBrand.layoutManager=LinearLayoutManager(this@MainActivity,
-                LinearLayoutManager.HORIZONTAL,false)
-            binding.viewBrand.adapter=BrandAdapter(it)
-            binding.progressBarPopular.visibility=View.GONE
+    private fun initBrand() {
+        binding.progressBarPopular.visibility = View.VISIBLE
+        viewModel.brands.observe(this, Observer {
+            binding.viewBrand.layoutManager = LinearLayoutManager(
+                this@MainActivity,
+                LinearLayoutManager.HORIZONTAL, false
+            )
+            binding.viewBrand.adapter = BrandAdapter(it)
+            binding.progressBarPopular.visibility = View.GONE
         })
         viewModel.loadBrand()
+    }
+
+    private fun initPopular() {
+        binding.progressBarPopular.visibility = View.VISIBLE
+        viewModel.popular.observe(this, Observer {
+            binding.viewPopular.layoutManager = GridLayoutManager(this@MainActivity, 2)
+            binding.viewPopular.adapter = PopularAdapter(it)
+            binding.progressBarPopular.visibility = View.GONE
+        })
+        viewModel.loadPopular()
     }
 }
