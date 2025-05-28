@@ -27,21 +27,21 @@ class ManagmentCart(val context: Context) {
         return tinyDB.getListObject("CartList") ?: arrayListOf()
     }
 
-//    fun minusItem(listFood: ArrayList<ItemModel>, position: Int, listener: ChangeNumberItemsListener) {
-//        if (listFood[position].numberInCart == 1) {
-//            listFood.removeAt(position)
-//        } else {
-//            listFood[position].numberInCart--
-//        }
-//        tinyDB.putListObject("CartList", listFood)
-//        listener.onChanged()
-//    }
-//
-//    fun plusItem(listFood: ArrayList<ItemModel>, position: Int, listener: ChangeNumberItemsListener) {
-//        listFood[position].numberInCart++
-//        tinyDB.putListObject("CartList", listFood)
-//        listener.onChanged()
-//    }
+    fun minusItem(listFood: ArrayList<ItemModel>, position: Int, listener: ChangeNumberItemsListener) {
+        if (listFood[position].numberInCart == 1) {
+            listFood.removeAt(position)
+        } else {
+            listFood[position].numberInCart--
+        }
+        tinyDB.putListObject("CartList", listFood)
+        listener.onChanged()
+    }
+
+    fun plusItem(listFood: ArrayList<ItemModel>, position: Int, listener: ChangeNumberItemsListener) {
+        listFood[position].numberInCart++
+        tinyDB.putListObject("CartList", listFood)
+        listener.onChanged()
+    }
 
     fun getTotalFee(): Double {
         val listFood = getListCart()

@@ -1,5 +1,6 @@
 package com.example.online_shop.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -24,10 +25,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        initBottomMenu()
         initBanner()
         initBrand()
         initPopular()
+    }
+
+    private fun initBottomMenu() {
+        binding.cartBtn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    CartActivity::class.java
+                )
+            )
+        }
     }
 
     private fun initBanner() {
