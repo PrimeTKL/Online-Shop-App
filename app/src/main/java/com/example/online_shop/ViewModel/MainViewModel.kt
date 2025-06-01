@@ -61,7 +61,7 @@ class MainViewModel() : ViewModel() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                println("Lỗi khi tải thương hiệu: ${error.message}")
             }
         })
     }
@@ -80,7 +80,7 @@ class MainViewModel() : ViewModel() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                println("Lỗi khi tải thương hiệu: ${error.message}")
             }
         })
     }
