@@ -32,23 +32,19 @@ class SigninActivity : AppCompatActivity() {
             val email = binding.loginUsername.text.toString().trim()
             val pass = binding.loginPassword.text.toString().trim()
 
-            // 1. Kiểm tra các trường đầu vào
+            // Kiểm tra các trường đầu vào
             if (email.isEmpty() || pass.isEmpty()) { // Đổi thành OR để kiểm tra cả hai
                 Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener // Dùng return@setOnClickListener để thoát khỏi lambda
             }
 
-            // Tùy chọn: Hiển thị ProgressBar hoặc vô hiệu hóa nút để báo hiệu đang xử lý
-            // showLoadingIndicator()
 
-            // 2. Thực hiện đăng nhập với Firebase Authentication
+
+            //  Thực hiện đăng nhập với Firebase Authentication
             firebaseAuth.signInWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this) { task ->
-                    // Tùy chọn: Ẩn ProgressBar hoặc kích hoạt lại nút
-                    // hideLoadingIndicator()
 
                     if (task.isSuccessful) {
-                        // Đăng nhập thành công
                         Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)

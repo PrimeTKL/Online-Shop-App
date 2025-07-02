@@ -12,7 +12,8 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:foregroundGravity="center">
+        android:foregroundGravity="center"
+        android:paddingBottom="84dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,7 +22,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
@@ -29,8 +30,7 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"  android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
@@ -54,7 +54,6 @@
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:layout_marginEnd="16dp"
-
                     app:srcCompat="@drawable/bell_icon" />
 
                 <ImageView
@@ -134,14 +133,13 @@
                     android:id="@+id/textView62"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:text="See all"
                     android:textColor="@color/purple" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ProgressBar
                     android:id="@+id/progressBarBrand"
@@ -184,14 +182,13 @@
                     android:id="@+id/textView63"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:text="See all"
                     android:textColor="@color/purple" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ProgressBar
                     android:id="@+id/progressBarPopular"
@@ -206,7 +203,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/viewPopular"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -259,7 +256,6 @@
                         android:layout_marginTop="4dp"
                         android:text="Explorer"
                         android:textAlignment="center"
-
                         android:textColor="@color/white"
                         android:textSize="10sp" />
                 </LinearLayout>
@@ -287,7 +283,6 @@
                         android:layout_marginTop="4dp"
                         android:text="Cart"
                         android:textAlignment="center"
-
                         android:textColor="@color/white"
                         android:textSize="10sp" />
                 </LinearLayout>
@@ -314,7 +309,6 @@
                         android:layout_marginTop="4dp"
                         android:text="Wishlist"
                         android:textAlignment="center"
-
                         android:textColor="@color/white"
                         android:textSize="10sp" />
                 </LinearLayout>
@@ -341,7 +335,6 @@
                         android:layout_marginTop="4dp"
                         android:text="My Order"
                         android:textAlignment="center"
-
                         android:textColor="@color/white"
                         android:textSize="10sp" />
                 </LinearLayout>
@@ -368,15 +361,12 @@
                         android:layout_marginTop="4dp"
                         android:text="Profile"
                         android:textAlignment="center"
-
                         android:textColor="@color/white"
                         android:textSize="10sp" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -113,7 +113,7 @@ class SignupActivity : AppCompatActivity() {
                 }
             } else {
                 Toast.makeText(
-                    this@SignupActivity, "All field are madatory ", Toast.LENGTH_SHORT
+                    this@SignupActivity, "All field are mandatory ", Toast.LENGTH_SHORT
                 ).show()
             }
         }
